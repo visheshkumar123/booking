@@ -1,0 +1,26 @@
+ <p style="color: green"><%= notice %></p>
+
+<h1>Bookings</h1>
+
+<div id="bookinggs">
+  <table>
+  <tr>
+    <th>address</th>
+    <th>property_no</th>
+    <th>occupance</th>
+    <tr>date</tr>
+  </tr>
+ <% @bookinggs.each do |bookingg| %> 
+  <tr>
+    <td><%= bookingg.address %></td>
+    <td><%= bookingg.property_no %></td>
+    <td><%= bookingg.occupance %></td>
+    <td><%= bookingg.date %></td>
+    <td colspan="3"> <%= link_to "Show", bookinggs_show_path(bookingg) %> |  <%= link_to "Edit", bookinggs_edit_path(bookingg) %></td>
+  </tr>
+  <%end%>
+</table> 
+</div>
+
+<%= link_to "New booking", bookinggs_new_path %>
+<%= link_to "home",  user_dashboards_index_path %>

@@ -1,0 +1,2 @@
+module Mydevise::RegistrationsHelper
+end

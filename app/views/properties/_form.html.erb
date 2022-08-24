@@ -1,0 +1,41 @@
+<%= form_with(model: property) do |form| %>
+  <% if property.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+        <% property.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+   <div>
+    <%= form.label :name_property, style: "display: block" %>
+    <%= form.text_field :name_property, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :photos, style: "display: block" %>
+    <%= form.select :photos, required: false %>  
+  </div>
+
+  <div>
+    <%= form.label :latitude, style: "display: block" %>
+    <%= form.email_field :latitude, required: true %>
+  </div>
+
+   <div>
+    <%= form.label :longitude, style: "display: block" %>
+    <%= form.email_field :longitude, required: true %>
+  </div>
+
+   <div>
+    <%= form.label :address_property, style: "display: block" %>
+    <%= form.email_field :address_property %>
+  </div>
+
+  <div>  
+    <%= form.submit :Submit, style: "display: block" %>
+  </div>
+
+<% end %>
