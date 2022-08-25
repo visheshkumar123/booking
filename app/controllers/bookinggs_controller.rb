@@ -1,15 +1,16 @@
 class BookinggsController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_booking, only: %i[ show edit update destroy ]
   def index
-    @bookinggs = Bookingg.all
+    @bookinggs = Bookingg.where(user_id: current_user.try(:id))
   end
 
   def show
   end
 
   def create
-    @bookingg = Bookingg.new(bookingg_params)
+    #@bookingg = Bookingg.new(bookingg_params)
+    @bookingg = current_userbookinggs.build(bookingg_params)
     respond_to do |format|
       if @bookingg.save
         format.html { redirect_to bookingg_url(@bookingg), notice: "Booking was successfully created." }
@@ -48,6 +49,6 @@ class BookinggsController < ApplicationController
   end 
   
   def bookingg_params
-    params.require(:bookingg).permit(:address, :property_no, :occupance, :date)
+    params.require(:bookingg).permit(:address, :property_no, :occupance, :date, :property_id)
   end    
 end

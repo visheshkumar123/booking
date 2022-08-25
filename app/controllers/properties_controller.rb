@@ -1,5 +1,8 @@
 class PropertiesController < ApplicationController
-  #before_action :authenticate_user!
+    #before_filter :check_property_owner, :only => [:index, :show]
+
+  #before_action :require_specific_role, only: %i[edit create update destroy new]
+  before_action :authenticate_user!
   before_action :set_property, only: %i[ show edit update destroy ]
   def index
     @properties = Property.all
@@ -51,4 +54,18 @@ class PropertiesController < ApplicationController
   def property_params
     params.require(:Property).permit(:name_property, :address_property, :latitude, :longitude, :photos)
   end
+
+  #def require_specific_role
+   # role = Role.find_by(user_type: params[:user][:roles])
+    #current_user.roles << role
+    #unless current_user.roles.first.user_type == 'Customer'
+     # flash[:error] = "You must be Property Owner to access this section"
+      #return redirect_to properties_path
+    #end
+  #end
+    #def check_property_owner
+      #if(my_condition to check if user type is customer)
+         #{
+          # return redirect_to user_dashboards_index_path 
+         #}
 end

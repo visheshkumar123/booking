@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
   get 'property_owner_dashboards/index'
   get 'user_dashboards/index'
-  get 'bookinggs/index'
-  get 'bookinggs/show'
-  get 'bookinggs/create'
-  get 'bookinggs/update'
-  get 'bookinggs/edit'
-  get 'bookinggs/new'
-  get 'bookinggs/destroy'
+  resources :bookinggs
   #get 'properties/index'
   #get 'properties/show'
   #get 'properties/new'

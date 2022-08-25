@@ -16,22 +16,27 @@
 
   <div>
     <%= form.label :photos, style: "display: block" %>
-    <%= form.select :photos, required: false %>  
+    <%= form.text_field :photos, required: false %>  
   </div>
 
   <div>
     <%= form.label :latitude, style: "display: block" %>
-    <%= form.email_field :latitude, required: true %>
+    <%= form.text_field :latitude, required: true %>
   </div>
 
    <div>
     <%= form.label :longitude, style: "display: block" %>
-    <%= form.email_field :longitude, required: true %>
+    <%= form.text_field :longitude, required: true %>
   </div>
 
    <div>
     <%= form.label :address_property, style: "display: block" %>
-    <%= form.email_field :address_property %>
+    <%= form.text_field :address_property %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id, required: true %>
   </div>
 
   <div>  

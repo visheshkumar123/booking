@@ -1,8 +1,7 @@
 <h1>Customer_Dashboards</h1>
 <p>WELCOME TO THE BOOKING SITE!</p>
-<button style="font-size: 10px;"><%= link_to "Create_Booking", bookinggs_new_path %></button>
-<button style="font-size: 10px;"><%= link_to "List_Of_Booking", bookinggs_index_path %></button> 
-<button style="font-size: 10px;"><%= link_to "List_Of_Properties", properties_path %></button> 
-<%=form_tag(destroy_user_session_path, method: :delete) do |f| %>
-<button style="font-size: 10px;"><%= link_to "Sign_out", destroy_user_session_path %></button>
-<%end if current_user%>
+<button style="font-size: 10px;"><%= link_to "New_Booking", new_bookingg_path %></button>
+<button style="font-size: 10px;"><%= link_to "Booking_Index", bookinggs_path %></button> 
+<button style="font-size: 10px;"><%= link_to "Properties_Index", properties_path %></button> 
+
+

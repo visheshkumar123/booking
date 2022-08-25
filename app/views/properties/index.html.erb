@@ -5,23 +5,18 @@
 <div id="properties">
   <table>
   <tr>
-    <th>name_property</th>
-    <th>address_property</th>
-    <th>latitude</th>
-    <tr>longitude</tr>
-    <tr>photos</tr>
+    <th>name_of_property</th>
+    <th>address_of_property</th>
   </tr>
  <% @properties.each do |property| %> 
   <tr>
     <td><%= property.name_property %></td>
     <td><%= property.address_property %></td>
-    <td><%= property.latitude %></td>
-    <td><%= property.longitude %></td>
-    <td><%= property.photos %></td>
-    <td colspan="3"> <%= link_to "Show", property_path(property) %> |  <%= link_to "Edit", edit_property_path(property) %></td>
+    <td colspan="3"> <%= link_to "Show", property_path(property) if property_owner_role_only %> |  <%= link_to "Edit", edit_property_path(property) if property_owner_role_only %></td>
   </tr>
   <%end%>
 </table> 
 </div>
-
-<%= link_to "New property", new_property_path %>
+<%= link_to "New property", new_property_path if property_owner_role_only%>
+<%= link_to "home",  user_dashboards_index_path if customer_role_only  %>
+<%= link_to "home",  property_owner_dashboards_index_path if property_owner_role_only  %>

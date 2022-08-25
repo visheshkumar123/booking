@@ -1,4 +1,4 @@
 class Bookingg < ApplicationRecord
-belongs_to :user
-belongs_to :Property
+belongs_to :user, optional: false
+belongs_to :property
 end

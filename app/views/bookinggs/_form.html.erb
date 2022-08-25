@@ -9,25 +9,32 @@
         <% end %>
       </ul>
   <% end %>
+  
    <div>
     <%= form.label :address, style: "display: block" %>
     <%= form.text_field :address, required: true %>
   </div>
 
   <div>
-    <%= form.label :property_no, style: "display: block" %>
-    <%= form.text_field :property_no, required: true %>  
+    <%= form.label :property_rating, style: "display: block" %>
+    <%= form.select :property_no, ['1','2','3','4','5'], {include_blank: "Select Rating", required: true} %>  
   </div>
 
   <div>
     <%= form.label :occupance, style: "display: block" %>
-    <%= form.email_field :occupance, required: true %>
+    <%= form.select :occupance, ['Single', 'Double'], {include_blank: "Select Occupance", required: true} %>
   </div>
 
    <div>
     <%= form.label :date, style: "display: block" %>
-    <%= form.email_field :date, required: true %>
+    <%= form.datetime_field :date, required: true %>
   </div>
+
+  <div>
+    <%= form.label :property_id, style: "display: block" %>
+    <%= form.select :property_id,Property.all.pluck(:name_property,:id), {include_blank: "Select Property", required: true} %>
+  </div>
+
 
   <div>  
     <%= form.submit :Submit, style: "display: block" %>

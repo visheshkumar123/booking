@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_24_063035) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_24_160017) do
   create_table "bookinggs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "address"
     t.string "property_no"
@@ -19,8 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_063035) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "Property_id"
-    t.index ["Property_id"], name: "index_bookinggs_on_Property_id"
+    t.bigint "property_id", null: false
+    t.index ["property_id"], name: "index_bookinggs_on_property_id"
     t.index ["user_id"], name: "index_bookinggs_on_user_id"
   end
 
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_063035) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookinggs", "properties"
   add_foreign_key "bookinggs", "users"
   add_foreign_key "properties", "users"
 end
