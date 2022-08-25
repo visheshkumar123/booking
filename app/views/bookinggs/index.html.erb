@@ -1,14 +1,16 @@
- <p style="color: green"><%= notice %></p>
+ <p style="color: red;"><%= notice %></p>
 
 <h1>Bookings</h1>
 
 <div id="bookinggs">
-  <table>
-  <tr>
-    <th>Address</th>
-    <th>Property_no</th>
-    
-  </tr>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr >
+      <th>Address</th>
+      <th>Property_no</th>
+      </tr>
+    </thead>
+  
  <% @bookinggs.each do |bookingg| %> 
   <tr>
     <td><%= bookingg.address %></td>

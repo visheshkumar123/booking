@@ -9,10 +9,9 @@ class BookinggsController < ApplicationController
   end
 
   def create
-    #@bookingg = Bookingg.new(bookingg_params)
-    @bookingg = current_userbookinggs.build(bookingg_params)
+    @bookingg = current_user.bookinggs.build(bookingg_params)
     respond_to do |format|
-      if @bookingg.save
+      if @bookingg.save!
         format.html { redirect_to bookingg_url(@bookingg), notice: "Booking was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -34,7 +33,7 @@ class BookinggsController < ApplicationController
   end
 
   def new
-    @bookinggs = Bookingg.new
+    @bookingg = Bookingg.new
   end
 
   def destroy

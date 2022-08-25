@@ -3,11 +3,14 @@
 <h1>Properties</h1>
 
 <div id="properties">
-  <table>
+  <table class="table">
+  <thead class="thead-dark">
   <tr>
-    <th>name_of_property</th>
-    <th>address_of_property</th>
+    <th>Property Name</th>
+    <th>Address</th>
+    <th>Action</th>
   </tr>
+  </thead>
  <% @properties.each do |property| %> 
   <tr>
     <td><%= property.name_property %></td>

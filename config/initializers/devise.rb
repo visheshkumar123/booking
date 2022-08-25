@@ -196,6 +196,8 @@ Devise.setup do |config|
   # :none            = No lock strategy. You should handle locking by yourself.
   # config.lock_strategy = :failed_attempts
 
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
+
   # Defines which key will be used when locking and unlocking an account
   # config.unlock_keys = [:email]
 

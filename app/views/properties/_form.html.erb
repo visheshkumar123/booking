@@ -9,38 +9,34 @@
         <% end %>
       </ul>
   <% end %>
+  
    <div>
-    <%= form.label :name_property, style: "display: block" %>
-    <%= form.text_field :name_property, required: true %>
+    <%= form.label :Property_Name, style: "display: block" %>
+    <%= form.text_field :name_property, required: true, class: "form-control form-control-lg"  %>
   </div>
 
   <div>
-    <%= form.label :photos, style: "display: block" %>
-    <%= form.text_field :photos, required: false %>  
+    <%= form.label :Owner_Phone_Number, style: "display: block" %>
+    <%= form.text_field :photos, required: false, class: "form-control" %>  
   </div>
 
   <div>
-    <%= form.label :latitude, style: "display: block" %>
-    <%= form.text_field :latitude, required: true %>
+    <%= form.label :Latitude, style: "display: block" %>
+    <%= form.text_field :latitude, required: true, class: "form-control form-control-lg" %>
   </div>
 
    <div>
-    <%= form.label :longitude, style: "display: block" %>
-    <%= form.text_field :longitude, required: true %>
+    <%= form.label :Longitude, style: "display: block" %>
+    <%= form.text_field :longitude, required: true, class: "form-control form-control-lg" %>
   </div>
 
    <div>
-    <%= form.label :address_property, style: "display: block" %>
-    <%= form.text_field :address_property %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id, required: true %>
-  </div>
+    <%= form.label :Address, style: "display: block" %>
+    <%= form.text_field :address_property, class: "form-control form-control-lg" %>
+  </div> 
 
   <div>  
-    <%= form.submit :Submit, style: "display: block" %>
+    <%= form.submit :Submit, class: "btn btn-primary pt1"%>
   </div>
 
 <% end %>

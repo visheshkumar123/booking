@@ -49,21 +49,16 @@
     </form>
   </div>
 </nav>
-<main role="main" class="container">
 
 
+
+
+
+
+
+  <%flash.each do |name,msg| %>
+      <%=msg%>
+    <% end %>
     <%= yield %>
-
-
-
-
-
-
-    </main><!-- /.container -->
-    
-
-
- 
   </body>
 </html>
-`

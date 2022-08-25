@@ -1,43 +1,34 @@
 <%= form_with(model: bookingg) do |form| %>
-  <% if bookingg.present? && bookingg.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(bookingg.errors.count, "error") %> prohibited this booking from being saved:</h2>
 
-      <ul>
-        <% bookingg.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-  <% end %>
   
    <div>
     <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address, required: true %>
+    <%= form.text_field :address, required: true, class: "form-control form-control-lg" %>
   </div>
 
   <div>
     <%= form.label :property_rating, style: "display: block" %>
-    <%= form.select :property_no, ['1','2','3','4','5'], {include_blank: "Select Rating", required: true} %>  
+    <%= form.select :property_no, ['1','2','3','4','5'], {include_blank: "Select Rating", required: true}, class: "form-control form-control-lg" %>  
   </div>
 
   <div>
     <%= form.label :occupance, style: "display: block" %>
-    <%= form.select :occupance, ['Single', 'Double'], {include_blank: "Select Occupance", required: true} %>
+    <%= form.select :occupance, ['Single', 'Double'], {include_blank: "Select Occupance", required: true},class: "form-control form-control-lg"%>
   </div>
 
    <div>
     <%= form.label :date, style: "display: block" %>
-    <%= form.datetime_field :date, required: true %>
+    <%= form.datetime_field :date, required: true, class: "form-control form-control-lg" %>
   </div>
 
   <div>
     <%= form.label :property_id, style: "display: block" %>
-    <%= form.select :property_id,Property.all.pluck(:name_property,:id), {include_blank: "Select Property", required: true} %>
+    <%= form.select :property_id,Property.all.pluck(:name_property,:id), {include_blank: "Select Property", required: true}, class: "form-control form-control-lg" %>
   </div>
 
 
-  <div>  
-    <%= form.submit :Submit, style: "display: block" %>
-  </div>
+  
+    <%= form.submit :Submit, class: "btn btn-primary pt1" %>
+
 
 <% end %>
