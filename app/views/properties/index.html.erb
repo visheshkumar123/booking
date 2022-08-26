@@ -15,11 +15,12 @@
   <tr>
     <td><%= property.name_property %></td>
     <td><%= property.address_property %></td>
-    <td colspan="3"> <%= link_to "Show", property_path(property) if property_owner_role_only %> |  <%= link_to "Edit", edit_property_path(property) if property_owner_role_only %></td>
+    <td colspan="3"> <%= link_to "View", property_path(property) if property_owner_role_only %> |  <%= link_to "Edit", edit_property_path(property) if property_owner_role_only %></td>
   </tr>
   <%end%>
 </table> 
 </div>
-<%= link_to "New property", new_property_path if property_owner_role_only%>
-<%= link_to "home",  user_dashboards_index_path if customer_role_only  %>
-<%= link_to "home",  property_owner_dashboards_index_path if property_owner_role_only  %>
+<%= link_to "Add", new_property_path if property_owner_role_only%>
+<br>
+<%= link_to "Back",  user_dashboards_index_path if customer_role_only  %>
+<%= link_to "Back",  property_owner_dashboards_index_path if property_owner_role_only  %>

@@ -23,5 +23,6 @@
 </div>
 
 <%= link_to "New booking", new_bookingg_path if customer_role_only %>
+<br>
 <%= link_to "home",  user_dashboards_index_path if customer_role_only %>
 <%= link_to "home",  property_owner_dashboards_index_path if property_owner_role_only  %>

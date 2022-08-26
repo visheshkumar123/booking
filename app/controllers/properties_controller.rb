@@ -1,19 +1,30 @@
 class PropertiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_property, only: %i[ show edit update destroy ]
+  
+    ###### Show All Properties In The Screen #######
+  
   def index
     @properties = Property.all
   end
 
+    ##### Show Particular Property #########
+
   def show
   end
 
+      ########## Create the field / Instance For the New Property ##########
+
   def new
-     @property = Property.new
+    @property = Property.new
   end
+
+        ######### Edit the Already Exist Property ###########
 
   def edit
   end
+
+        ######### Create the New Property ###########
 
   def create
     @property = Property.new(property_params)
@@ -27,6 +38,8 @@ class PropertiesController < ApplicationController
     end    
   end 
 
+        ########### Update The Existing Property ###########
+
   def update
     respond_to do |format|
       if @property.update(property_params)
@@ -37,19 +50,26 @@ class PropertiesController < ApplicationController
     end
   end
 
+        ########## Delete the Existing Property ###########
   def destroy
     @property.destroy
-      respond_to do |format|
-        format.html { redirect_to properties_url, notice: "Property was successfully destroyed." }
-      end
+    respond_to do |format|
+      format.html { redirect_to properties_url, notice: "Property was successfully destroyed." }
+    end
   end
+
   private
-  
+
+        ########## Reduce the Redundancy of code calling of ID of Property ######
+
   def set_property
     @property = Property.find(params[:id])
   end
-
+  
+      ########## Permission the Parameters Used in the Class ##########
+  
   def property_params
     params.require(:property).permit(:name_property, :address_property, :latitude, :longitude, :photos)
   end
 end
+
