@@ -30,6 +30,11 @@
     <%= form.text_field :longitude, required: true, class: "form-control form-control-lg" %>
   </div>
 
+  <div>
+    <%= form.label :Pictures, style: "display: block" %>
+    <%= form.file_field :avatar %>
+  </div>  
+
    <div>
     <%= form.label :Address, style: "display: block" %>
     <%= form.text_field :address_property, class: "form-control form-control-lg" %>
