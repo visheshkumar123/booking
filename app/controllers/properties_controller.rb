@@ -69,7 +69,7 @@ class PropertiesController < ApplicationController
       ########## Permission the Parameters Used in the Class ##########
   
   def property_params
-    params.require(:property).permit(:name_property, :address_property, :latitude, :longitude, :photos)
+    params.require(:property).permit(:name_property, :address_property, :latitude, :longitude, :photos, :price)
   end
 end
 

@@ -35,6 +35,11 @@
     <%= form.file_field :avatar %>
   </div>  
 
+  <div>
+    <%= form.label :Price, style: "display: block" %>
+    <%= form.number_field :price, class: "form-control form-control-lg" %>
+  </div>  
+
    <div>
     <%= form.label :Address, style: "display: block" %>
     <%= form.text_field :address_property, class: "form-control form-control-lg" %>

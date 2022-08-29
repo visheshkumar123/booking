@@ -8,7 +8,6 @@
   <tr>
     <th>Property Name</th>
     <th>Address</th>
-    <th>Pictures</th>
     <th>Action</th>
   </tr>
   </thead>
@@ -16,7 +15,6 @@
   <tr>
     <td><%= property.name_property %></td>
     <td><%= property.address_property %></td>
-    <td><%= property.avatar %></td>
     <td colspan="3"> <%= link_to "View", property_path(property) if property_owner_role_only %> |  <%= link_to "Edit", edit_property_path(property) if property_owner_role_only %></td>
   </tr>
   <%end%>
