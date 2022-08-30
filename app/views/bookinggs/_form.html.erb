@@ -1,9 +1,5 @@
 <%= form_with(model: bookingg) do |form| %>
 
-   <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address, required: true, class: "form-control form-control-lg" %>
-  </div>
 
   <div>
     <%= form.label :property_rating, style: "display: block" %>
@@ -18,6 +14,11 @@
    <div>
     <%= form.label :date, style: "display: block" %>
     <%= form.datetime_field :date, required: true, class: "form-control form-control-lg" %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address, required: true, class: "form-control form-control-lg" %>
   </div>
 
   <div>

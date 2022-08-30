@@ -9,6 +9,7 @@
     <th>Property Name</th>
     <th>Address</th>
     <th>Price</th>
+    <th>Picture</th>
     <th>Action</th>
   </tr>
   </thead>
@@ -17,8 +18,14 @@
     <td><%= property.name_property %></td>
     <td><%= property.address_property %></td>
     <td><%= property.price %></td>
+    <td><% if property.avatar.present? %>
+          <%= image_tag url_for(property.avatar),style: 'height:25%;width:30%;' %>
+        <% else %>
+        'Test'
+        <%end%>
+    </td>
     <td colspan="3"> <%= link_to "View", property_path(property) if property_owner_role_only %> |  <%= link_to "Edit", edit_property_path(property) if property_owner_role_only %></td>
-  </tr>
+    </tr>
   <%end%>
 </table> 
 </div>
