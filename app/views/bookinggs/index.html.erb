@@ -1,25 +1,22 @@
  <p style="color: red;"><%= notice %></p>
-
-<h1>Bookings</h1>
-
-<div id="bookinggs">
+ <h1>Bookings</h1>
+ <div id="bookinggs">
   <table class="table">
     <thead class="thead-dark">
       <tr >
-      <th>Address</th>
-      <th>Property_no</th>
+        <th>Address</th>
+        <th>Property_no</th>
       </tr>
     </thead>
-  
- <% @bookinggs.each do |bookingg| %> 
-  <tr>
-    <td><%= bookingg.address %></td>
-    <td><%= bookingg.property_no %></td>
-    
-    <td colspan="3"> <%= link_to "Show", bookingg_path(bookingg) if customer_role_only %> |  <%= link_to "Edit", edit_bookingg_path(bookingg) if customer_role_only %></td>
-  </tr>
-  <%end%>
-</table> 
+    <% @bookinggs.each do |bookingg| %> 
+    <tr>
+      <td><%= bookingg.address %></td>
+      <td><%= bookingg.property_no %></td>
+      
+      <td colspan="3"> <%= link_to "Show", bookingg_path(bookingg) if customer_role_only %> |  <%= link_to "Edit", edit_bookingg_path(bookingg) if customer_role_only %></td>
+    </tr>
+    <%end%>
+  </table> 
 </div>
 <%= link_to "New Booking", new_bookingg_path if customer_role_only %>
 <br>

@@ -1,34 +1,23 @@
 <%= form_with(model: bookingg) do |form| %>
-
-
-  <div>
-    <%= form.label :property_rating, style: "display: block" %>
-    <%= form.select :property_no, ['1','2','3','4','5'], {include_blank: "Select Rating", required: true}, class: "form-control form-control-lg" %>  
-  </div>
-
-  <div>
-    <%= form.label :occupance, style: "display: block" %>
-    <%= form.select :occupance, ['Single', 'Double'], {include_blank: "Select Occupance", required: true},class: "form-control form-control-lg"%>
-  </div>
-
-   <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.datetime_field :date, required: true, class: "form-control form-control-lg" %>
-  </div>
-
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address, required: true, class: "form-control form-control-lg" %>
-  </div>
-
-  <div>
-    <%= form.label :property_id, style: "display: block" %>
-    <%= form.select :property_id,Property.all.pluck(:name_property,:id), {include_blank: "Select Property", required: true}, class: "form-control form-control-lg" %>
-  </div>
-
-
-  
-    <%= form.submit :Submit, class: "btn btn-primary pt1" %>
-
-
+<div>
+  <%= form.label :property_rating, style: "display: block" %>
+  <%= form.select :property_no, ['1','2','3','4','5'], {include_blank: "Select Rating", required: true}, class: "form-control form-control-lg" %>  
+</div>
+<div>
+  <%= form.label :occupance, style: "display: block" %>
+  <%= form.select :occupance, ['Single', 'Double'], {include_blank: "Select Occupance", required: true},class: "form-control form-control-lg"%>
+</div>
+<div>
+  <%= form.label :date, style: "display: block" %>
+  <%= form.datetime_field :date, required: true, class: "form-control form-control-lg" %>
+</div>
+<div>
+  <%= form.label :address, style: "display: block" %>
+  <%= form.text_field :address, required: true, class: "form-control form-control-lg" %>
+</div>
+<div>
+  <%= form.label :property_id, style: "display: block" %>
+  <%= form.select :property_id,Property.all.pluck(:name_property,:id), {include_blank: "Select Property", required: true}, class: "form-control form-control-lg" %>
+</div>
+<%= form.submit :Submit, class: "btn btn-primary pt1" %>
 <% end %>

@@ -1,30 +1,30 @@
 class PropertiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_property, only: %i[ show edit update destroy ]
-  
-    ###### Show All Properties In The Screen #######
-  
+
+  ###### Show All Properties In The Screen #######
+
   def index
     @properties = Property.all
   end
 
-    ##### Show Particular Property #########
+  ##### Show Particular Property #########
 
   def show
   end
 
-      ########## Create the field / Instance For the New Property ##########
+  ########## Create the field / Instance For the New Property ##########
 
   def new
     @property = Property.new
   end
 
-        ######### Edit the Already Exist Property ###########
+  ######### Edit the Already Exist Property ###########
 
   def edit
   end
 
-        ######### Create the New Property ###########
+  ######### Create the New Property ###########
 
   def create
     @property = Property.new(property_params)
@@ -34,11 +34,11 @@ class PropertiesController < ApplicationController
         format.html { redirect_to property_url(@property), notice: "Property was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-      end 
-    end    
-  end 
+      end
+    end
+  end
 
-        ########### Update The Existing Property ###########
+  ########### Update The Existing Property ###########
 
   def update
     respond_to do |format|
@@ -50,7 +50,7 @@ class PropertiesController < ApplicationController
     end
   end
 
-        ########## Delete the Existing Property ###########
+  ########## Delete the Existing Property ###########
   def destroy
     @property.destroy
     respond_to do |format|
@@ -60,16 +60,15 @@ class PropertiesController < ApplicationController
 
   private
 
-        ########## Reduce the Redundancy of code calling of ID of Property ######
+  ########## Reduce the Redundancy of code calling of ID of Property ######
 
   def set_property
     @property = Property.find(params[:id])
   end
-  
-      ########## Permission the Parameters Used in the Class ##########
-  
+
+  ########## Permission the Parameters Used in the Class ##########
+
   def property_params
     params.require(:property).permit(:name_property, :address_property, :latitude, :longitude, :photos, :price, :avatar)
   end
 end
-

@@ -1,16 +1,16 @@
 <%= form_with(model: property) do |form| %>
-  <% if property.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+<% if property.errors.any? %>
+<div style="color: red">
+  <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
 
-      <ul>
-        <% property.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <ul>
+    <% property.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
   <% end %>
   
-   <div>
+  <div>
     <%= form.label :Property_Name, style: "display: block" %>
     <%= form.text_field :name_property, required: true, class: "form-control form-control-lg"  %>
   </div>
@@ -25,7 +25,7 @@
     <%= form.number_field :latitude, required: true, class: "form-control form-control-lg" %>
   </div>
 
-   <div>
+  <div>
     <%= form.label :Longitude, style: "display: block" %>
     <%= form.number_field :longitude, required: true, class: "form-control form-control-lg" %>
   </div>
@@ -40,7 +40,7 @@
     <%= form.number_field :price, class: "form-control form-control-lg" %>
   </div>  
 
-   <div>
+  <div>
     <%= form.label :Address, style: "display: block" %>
     <%= form.text_field :address_property, class: "form-control form-control-lg" %>
   </div> 

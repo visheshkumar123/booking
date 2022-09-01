@@ -1,30 +1,30 @@
 class BookinggsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_booking, only: %i[ show edit update destroy ]
-  
-        ######### All Bookings #########
+
+  ######### All Bookings #########
 
   def index
     @bookinggs = Bookingg.where(user_id: current_user.try(:id))
   end
 
-      ######## Particular Bookings Details #########
+  ######## Particular Bookings Details #########
 
   def show
   end
 
-      ########  Edit Existing Bookings #########
+  ########  Edit Existing Bookings #########
 
   def edit
   end
 
-      ########## Create the Insatnce For Creating Bookings ##########
+  ########## Create the Insatnce For Creating Bookings ##########
 
   def new
     @bookingg = Bookingg.new
   end
 
-        #########  Fill The Parameters To Create the Booking (New)  ######
+  #########  Fill The Parameters To Create the Booking (New)  ######
 
   def create
     @bookingg = current_user.bookinggs.build(bookingg_params)
@@ -33,11 +33,11 @@ class BookinggsController < ApplicationController
         format.html { redirect_to bookingg_url(@bookingg), notice: "Booking was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-      end 
+      end
     end
   end
 
-      ######### Modify the Existing Bookings ###########
+  ######### Modify the Existing Bookings ###########
 
   def update
     respond_to do |format|
@@ -49,7 +49,7 @@ class BookinggsController < ApplicationController
     end
   end
 
-      ########## Delete the Particular Existing Bookings ##########  
+  ########## Delete the Particular Existing Bookings ##########
 
   def destroy
     @bookingg.destroy
@@ -57,18 +57,18 @@ class BookinggsController < ApplicationController
       format.html { redirect_to bookinggs_url, notice: "Booking was successfully destroyed." }
     end
   end
-   
+
   private
 
-          ########### Calling of Find (ID) Whenever Need ########
+  ########### Calling of Find (ID) Whenever Need ########
 
   def set_booking
     @bookingg = Bookingg.find(params[:id])
-  end 
-  
-        ###### Passing The Required Parameters  ############
+  end
+
+  ###### Passing The Required Parameters  ############
 
   def bookingg_params
     params.require(:bookingg).permit(:address, :property_no, :occupance, :date, :property_id)
-  end    
+  end
 end
