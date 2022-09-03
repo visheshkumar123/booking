@@ -1,6 +1,8 @@
 class CreateProperties < ActiveRecord::Migration[7.0]
   def change
     create_table :properties do |t|
+
+      ### Create the Properties's table with required attributes 
       t.string :name_property
       t.string :address_property
       t.string :latitude
