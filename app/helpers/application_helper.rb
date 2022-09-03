@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def customer_role_only
+  def customer_role_only
     current_user.roles.first.user_type == 'Customer'
   end
 
