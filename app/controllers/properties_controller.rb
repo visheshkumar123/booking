@@ -5,7 +5,7 @@ class PropertiesController < ApplicationController
   ###### Show All Properties In The Screen #######
 
   def index
-    @properties = Property.all
+    @properties=Property.all
   end
 
   ##### Show Particular Property #########
@@ -16,7 +16,11 @@ class PropertiesController < ApplicationController
   ########## Create the field / Instance For the New Property ##########
 
   def new
+    if current_user.roles=='customer'
     @property = Property.new
+    else  
+    redirect_to bookinggs_path
+    end
   end
 
   ######### Edit the Already Exist Property ###########

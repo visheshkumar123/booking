@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= f.label :roles %><br />
-    <%= f.select :roles, ['Customer', 'Property_Owner'], {include_blank: "Select Type", required: true}, class: "form-control form-control-lg" %>  
+    <%= f.select :role_ids,Role.pluck(:user_type, :id) ,{include_blank: "Select Type", required: true}, class: "form-control form-control-lg" %>  
   </div>
 
   <div class="field">
