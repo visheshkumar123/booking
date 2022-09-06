@@ -5,12 +5,12 @@ class BookinggsController < ApplicationController
   ######### All Bookings #########
 
   def index
-    if current_user.roles=='Customer'
+    #if current_user.roles=='Customer'
     @bookinggs = Bookingg.where(user_id: current_user.try(:id))
-    else
-    redirect_to properties_path  
-    end
-  end  
+    #else
+    #redirect_to properties_path
+    #end
+  end
 
   ######## Particular Bookings Details #########
 
