@@ -4,5 +4,6 @@ class User < ApplicationRecord
   has_many :properties
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
-  validates :roles, presence: true  
+  validates :role_ids, presence: true 
+  validates :phone_no, presence: true, length: {maximum: 10} 
 end
